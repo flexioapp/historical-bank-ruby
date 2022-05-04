@@ -26,10 +26,8 @@ Gem::Specification.new do |s|
   s.homepage    = 'https://github.com/Skyscanner/historical-bank-ruby'
   s.license     = 'Apache-2.0'
 
-  require 'rake'
-  s.files = FileList['lib/**/*.rb', 'Gemfile', 'examples/*.rb',
-                     'historical-bank.gemspec', 'spec/**/*.rb'].to_a
-  s.files += ['README.md', 'LICENSE', 'CONTRIBUTING.md', 'AUTHORS',
+  s.files = Dir['lib/**/*.rb'] + Dir['examples/*.rb'] + Dir['spec/**/*.rb']
+  s.files += ['Gemfile', 'historical-bank.gemspec', 'README.md', 'LICENSE', 'CONTRIBUTING.md', 'AUTHORS',
               'CHANGELOG.md', 'spec/fixtures/time-series-2015-09.json']
 
   s.test_files = s.files.grep(%r{^spec/})
